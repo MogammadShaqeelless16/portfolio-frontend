@@ -6,7 +6,7 @@ export const getAllBlogs = () => async (dispatch) => {
     dispatch({
       type: blogActionType.ALL_BLOGS_REQUEST,
     });
-    const res = await axios.get(`/api/v1/publications`);
+    const res = await axios.get(`https://portfolio-backend-389u.onrender.com/api/v1/publications`);
 
     dispatch({
       type: blogActionType.ALL_BLOGS_SUCCESS,

@@ -21,7 +21,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       setloading(true);
-      const res = await axios.post("/api/v1/contact", inputData);
+      const res = await axios.post("https://portfolio-backend-389u.onrender.com/api/v1/contact", inputData);
 
       if (res.data.message) {
         setloading(false);

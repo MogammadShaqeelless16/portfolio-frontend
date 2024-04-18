@@ -14,7 +14,7 @@ const ManageSkill = () => {
   useEffect(() => {
     const getSkill = async () => {
       try {
-        const { data } = await axios.get("/api/v1/skill");
+        const { data } = await axios.get("https://portfolio-backend-389u.onrender.com/api/v1/skill");
         setData(data.data);
       } catch (error) {
         toast.error(error.response.data.message);
@@ -52,7 +52,7 @@ const ManageSkill = () => {
   ];
   const handleDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/v1/skill/${id}`, {
+      const { data } = await axios.delete(`https://portfolio-backend-389u.onrender.com/api/v1/skill/${id}`, {
         withCredentials: true,
       });
       toast.success(data.status);
@@ -66,7 +66,7 @@ const ManageSkill = () => {
 
     try {
       const { data } = await axios.patch(
-        `/api/v1/skill/${val._id}`,
+        `https://portfolio-backend-389u.onrender.com/api/v1/skill/${val._id}`,
         formInput,
         { withCredentials: true }
       );
@@ -77,7 +77,7 @@ const ManageSkill = () => {
   };
   const handleAdd = async (formInput) => {
     try {
-      const { data } = await axios.post("/api/v1/skill", formInput, {
+      const { data } = await axios.post("https://portfolio-backend-389u.onrender.com/api/v1/skill", formInput, {
         withCredentials: true,
       });
       toast.success(data.status);

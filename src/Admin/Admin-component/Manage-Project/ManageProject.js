@@ -69,7 +69,7 @@ const ManageProject = () => {
 
     try {
       const { data } = await axios.patch(
-        `/api/v1/project/${val._id}`,
+        `https://portfolio-backend-389u.onrender.com/api/v1/project/${val._id}`,
         formInput,
         { withCredentials: true }
       );
