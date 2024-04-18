@@ -106,7 +106,7 @@ export default function SideNav() {
   const navigate = useNavigate();
   const logout = async () => {
     try {
-      const { data } = await axios.get("/api/v1/users/logout", {
+      const { data } = await axios.get("https://portfolio-backend-389u.onrender.com/api/v1/users/logout", {
         withCredentials: true,
       });
       toast.success(data.message);
