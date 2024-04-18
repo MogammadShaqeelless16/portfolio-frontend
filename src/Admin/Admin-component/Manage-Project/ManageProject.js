@@ -53,7 +53,7 @@ const ManageProject = () => {
   ];
   const handleAdd = async (formInput) => {
     try {
-      const { data } = await axios.post("/api/v1/project", formInput, {
+      const { data } = await axios.post("https://portfolio-backend-389u.onrender.com/api/v1/project", formInput, {
         withCredentials: true,
       });
       toast.success(data.status);
@@ -82,7 +82,7 @@ const ManageProject = () => {
   };
   const handleDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/v1/project/${id}`, {
+      const { data } = await axios.delete(`https://portfolio-backend-389u.onrender.com/api/v1/project/${id}`, {
         withCredentials: true,
       });
       toast.success(data.status);
