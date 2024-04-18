@@ -5,7 +5,7 @@ export const getAllEducation = () => async (dispatch) => {
     dispatch({
       type: educationActionType.ALL_EDUCATION_REQUEST,
     });
-    const { data } = await axios.get(`/api/v1/education`);
+    const { data } = await axios.get(`https://portfolio-backend-389u.onrender.com/api/v1/education`);
 
     dispatch({
       type: educationActionType.ALL_EDUCATION_SUCCESS,
