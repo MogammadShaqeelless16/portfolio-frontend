@@ -50,7 +50,7 @@ const ManageAbout = () => {
         e.preventDefault()
         if (about) {
             try {
-                const { data } = await axios.patch(`/api/v1/about/${about[0]?._id}`, formInput, { withCredentials: true })
+                const { data } = await axios.patch(`https://portfolio-backend-389u.onrender.com/api/v1/about/${about[0]?._id}`, formInput, { withCredentials: true })
                 toast.success(data.status)
             } catch (error) {
                 toast.error(error.response.data.message);
