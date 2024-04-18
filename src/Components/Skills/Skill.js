@@ -7,7 +7,7 @@ const Skill = () => {
   useEffect(() => {
     const getSkill = async () => {
       try {
-        const { data } = await axios.get("/api/v1/skill");
+        const { data } = await axios.get("https://portfolio-backend-389u.onrender.com/api/v1/skill");
         setData(data.data);
       } catch (error) {
         toast.success(error);
