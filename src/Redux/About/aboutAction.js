@@ -5,7 +5,7 @@ export const getAllAbout = () => async (dispatch) => {
     dispatch({
       type: aboutActionType.ALL_ABOUT_REQUEST,
     });
-    const res = await axios.get(`/api/v1/about`);
+    const res = await axios.get(`https://portfolio-backend-389u.onrender.com/api/v1/about`);
     
     dispatch({
       type: aboutActionType.ALL_ABOUT_SUCCESS,
