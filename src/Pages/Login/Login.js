@@ -17,7 +17,7 @@ const Login = ({ setCurrentUser }) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post(`/api/v1/users/login`, inputValue);
+      const res = await axios.post(`https://portfolio-backend-389u.onrender.com/api/v1/users/login`, inputValue);
       setLoading(false);
       toast.success(res.data.status);
       setCurrentUser(res.data.data.user);
