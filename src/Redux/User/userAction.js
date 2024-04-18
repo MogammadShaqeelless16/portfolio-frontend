@@ -11,7 +11,7 @@ export const loadUser = () => async (dispatch) => {
     dispatch({
       type: userActionType.LOAD_USER_REQUEST,
     });
-    const { data } = await axios.get(`/api/v1/users/me`, {
+    const { data } = await axios.get(`https://portfolio-backend-389u.onrender.com/api/v1/users/me`, {
       withCredentials: true,
     });
     dispatch({
