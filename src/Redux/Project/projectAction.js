@@ -6,7 +6,7 @@ export const getAllProject = () => async (dispatch) => {
     dispatch({
       type: projectActionType.ALL_PROJECT_REQUEST,
     });
-    const { data } = await axios.get("/api/v1/project", {
+    const { data } = await axios.get("https://portfolio-backend-389u.onrender.com/api/v1/project", {
       withCredentials: true,
     });
     dispatch({
