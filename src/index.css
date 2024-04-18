@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Ysabeau+Infant:wght@700&display=swap');
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+
+:root {
+  --dark-navy: #ffffff;
+  --navy: #ffffff;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --navy-shadow: rgba(2, 12, 27, 0.7);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #000000;
+  --white: #000000;
+  --green: #12bdf1;
+  --green-tint: rgba(0, 0, 0, 0.1);
+  --pink: #f57dff;
+  --blue: #57cbff;
+}
+
+body {
+  font-family: 'Ysabeau Infant', sans-serif;
+  background-color: var(--navy);
+
+}
