@@ -49,7 +49,7 @@ const ManageEducation = () => {
   ];
   const handleDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/v1/education/${id}`, {
+      const { data } = await axios.delete(`https://portfolio-backend-389u.onrender.com/api/v1/education/${id}`, {
         withCredentials: true,
       });
       toast.success(data.status);
@@ -77,7 +77,7 @@ const ManageEducation = () => {
   };
   const handleAdd = async (formInput) => {
     try {
-      const { data } = await axios.post("/api/v1/education", formInput, {
+      const { data } = await axios.post("https://portfolio-backend-389u.onrender.com/api/v1/education", formInput, {
         withCredentials: true,
       });
       toast.success(data.status);
