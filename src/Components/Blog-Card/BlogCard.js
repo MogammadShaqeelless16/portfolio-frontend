@@ -1,8 +1,9 @@
 import React from "react";
 import "./BlogCard.css";
-const BlogCard = ({ blog }) => {
 
-  const { title, categories, link, thumbnail, pubDate, description } = blog;
+const BlogCard = ({ blog }) => {
+  const { title, content, link, thumbnail, pubDate } = blog;
+
   function getTimeAgo(dateString) {
     const date = new Date(dateString);
     const currentDate = new Date();
@@ -25,43 +26,42 @@ const BlogCard = ({ blog }) => {
     }
   }
 
-  const sanitizedDescription = description.replace(/<[^>]+>/g, '');
+  function stripHtmlTags(html) {
+    // Remove HTML tags
+    let strippedText = html.replace(/<[^>]*>?/gm, '');
+    // Remove special characters like &hellip;, >, and []
+    strippedText = strippedText.replace(/&hellip;|>|[^\w\s]/g, '');
+    return strippedText;
+  }
+
+  const strippedContent = stripHtmlTags(content);
 
 
   return (
-
-    <div class="card">
-      <a href={link} rel='noreferrer' target="_blank" >
-        <div class="card-header">
-          <img src={thumbnail} alt="rover" />
+    <div className="card">
+      <a href={link} rel='noreferrer' target="_blank">
+        <div className="card-header">
+          <img src={thumbnail} alt="featured" />
         </div>
       </a>
-      <div class="card-body">
+      <div className="card-body">
         <a href={link} rel='noreferrer' target="_blank">
           <h1 className="card-header">
             {title}
           </h1>
         </a>
-        <p>
-          {sanitizedDescription.substring(0, 100)}
-        </p>
         <div className="tags">
-          {categories.map((tool) => (
-            <div className="tag">{tool}</div>
-          ))}
+          {strippedContent}
         </div>
-        <div class="user">
-          <img src="https://cdn-images-1.medium.com/v2/resize:fill:150:150/1*kvE-08BpRrydTksdsAtAfA@2x.jpeg" alt="user" />
-          <div class="user-info">
+        <div className="user">
+          <img src="https://i.ibb.co/gRgypQL/1649421748390.jpg" alt="user" />
+          <div className="user-info">
             <h5>{pubDate}</h5>
             <small>{getTimeAgo(pubDate)}</small>
           </div>
         </div>
       </div>
-
     </div>
-
-
   );
 };
 

@@ -53,17 +53,7 @@ const ManageAbout = () => {
                 const { data } = await axios.patch(`https://portfolio-backend-389u.onrender.com/api/v1/about/${about[0]?._id}`, formInput, { withCredentials: true })
                 toast.success(data.status)
             } catch (error) {
-                if (error.response) {
-                    // The request was made and the server responded with a status code
-                    // that falls out of the range of 2xx
-                    toast.error(error.response.data.message);
-                  } else if (error.request) {
-                    // The request was made but no response was received
-                    toast.error('No response received from the server');
-                  } else {
-                    // Something happened in setting up the request that triggered an error
-                    toast.error('Error setting up the request');
-                  }
+                toast.error(error.response.data.message);
             }
         }
     }

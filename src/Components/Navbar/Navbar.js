@@ -31,7 +31,7 @@ const Navbar = ({ about, project, contact }) => {
       </div>
       <ul className="nav-links">
         <li className="nav-link">
-          <Link to="/">home</Link>
+          <Link to="/">Home</Link>
         </li>
         {isBlogPage ? null : (
           <li className="nav-link" onClick={() => scrollToSection(about)}>
@@ -44,7 +44,7 @@ const Navbar = ({ about, project, contact }) => {
           </li>
         )}
         <li className="nav-link">
-          <Link to="/blog">Blog</Link>
+          <Link to="/media">Media</Link>
         </li>
         {isBlogPage ? null : (
           <li className="nav-link" onClick={() => scrollToSection(contact)}>

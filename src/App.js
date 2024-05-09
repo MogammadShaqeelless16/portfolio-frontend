@@ -59,7 +59,7 @@ function App() {
             />
           </Routes>
           <Routes>
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/media" element={<Blog />} />
           </Routes>
 
           <Routes>

@@ -1,39 +1,57 @@
-import React, { useEffect } from "react";
-import BlogCard from "../../Components/Blog-Card/BlogCard";
-import "./Blog.css";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllBlogs } from "../../Redux/Blog/blogAction";
-import { TailSpin } from "react-loader-spinner";
+import React, { useState, useEffect } from 'react';
+import BlogCard from '../../Components/Blog-Card/BlogCard'; // Import your BlogCard component
 
 const Blog = () => {
-  const dispatch = useDispatch();
-  const { blogs, loading } = useSelector((state) => state.blogs);
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    dispatch(getAllBlogs());
-  }, [dispatch]);
-  console.log(blogs);
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch('https://shaqeel.wordifysites.com/wp-json/wp/v2/posts');
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+        const data = await response.json();
+        const formattedPosts = await Promise.all(data.map(async post => {
+          // Fetch the image URL based on the featured_media ID
+          const mediaResponse = await fetch(`https://shaqeel.wordifysites.com/wp-json/wp/v2/media/${post.featured_media}`);
+          if (!mediaResponse.ok) {
+            throw new Error('Failed to fetch media');
+          }
+          const mediaData = await mediaResponse.json();
+          const imageUrl = mediaData.media_details.sizes.thumbnail.source_url; // Adjust the size as needed
+          return {
+            id: post.id,
+            title: post.title.rendered,
+            content: post.excerpt.rendered,
+            link: post.link,
+            categories: post.categories.map(category => category.name),
+            thumbnail: imageUrl, // Use the fetched image URL
+            pubDate: post.date,
+          };
+        }));
+        setPosts(formattedPosts);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
   return (
-    <div className="container">
-
-      <div className="Blog">
-        {loading ? (
-          <TailSpin
-            height="20"
-            width="20"
-            color="#4fa94d"
-            ariaLabel="tail-spin-loading"
-            radius="1"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
+    <div>
+      <h1 class="heading-primary aos-init aos-animate">What the Media Says</h1>
+      <div className="blog-cards-container">
+        {posts.map(post => (
+          <BlogCard
+            key={post.id}
+            blog={post} // Pass the entire post object as the 'blog' prop
           />
-        ) : (
-          blogs && blogs.map((blog) => <BlogCard blog={blog} />)
-        )}
-
+        ))}
       </div>
     </div>
   );
-};
+}
 
 export default Blog;

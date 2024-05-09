@@ -1,90 +1,105 @@
+.blog-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row */
+    justify-content: center; /* Align cards with space between */
+  }
+
 .card {
     margin: 10px;
-    background-color: var(--light-navy);
+    background-color: #a7eef9;
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    width: 300px;
-}
-
-.card-header img {
+    width: 300px; /* Initial width for desktop */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically by default */
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px); /* Display two cards per row on tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: calc(100% - 20px); /* Display one card per row on mobile devices */
+    }
+  }
+  
+  .card-header img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-}
+    color: #ffffff;
+  }
 
-
-.card-body {
+  .card-header {
+    color: #ffffff;
+  }
+  
+  .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-between; /* Adjust alignment */
     padding: 20px;
     min-height: 250px;
-}
-
-.card-header:hover {
+  }
+  
+  .card-header:hover {
     text-decoration: underline;
-}
-
-.tag {
-    background: var(-navy);
+  }
+  
+  .tag {
+    background: var(--navy);
     border-radius: 50px;
     font-size: 12px;
-    margin: 0;
     color: var(--slate);
     padding: 2px 10px;
     text-transform: uppercase;
     cursor: pointer;
-}
-
-
-
-.card-body p {
+  }
+  
+  .card-body {
     font-size: 13px;
     margin: 15px 0 10px;
     color: var(--lightest-slate);
-}
-
-.user {
+  }
+  
+  .user {
     display: flex;
-    margin-top: auto;
     color: var(--lightest-slate);
     font-size: 1.3rem;
     border-top: 1px solid var(--slate);
     width: 100%;
     padding-top: 20px;
-}
-
-a {
+  }
+  
+  a {
     color: var(--slate);
-}
-
-.user img {
+  }
+  
+  .user img {
     border-radius: 50%;
     width: 40px;
     height: 40px;
     margin-right: 10px;
-}
-
-
-
-.tags {
+  }
+  
+  .tags {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 1rem;
-
-}
-
-.tag {
-    background-color: var(--navy);
+  }
+  
+  .tag {
+    background-color: var(#ffffff); /* Correct the color variable syntax */
     color: var(--lightest-slate);
-    margin: 1rem .3rem;
+    margin: 0.3rem; /* Adjust margin */
     font-size: 1rem;
-}
-
-
-.user-info small {
-    color: #545d7a;
-}
+  }
+  
+  .user-info small {
+    color: #ffffff; /* Update the color */
+  }
+  
