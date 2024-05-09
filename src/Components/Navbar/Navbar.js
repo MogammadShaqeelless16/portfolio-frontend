@@ -16,7 +16,7 @@ const Navbar = ({ about, project, contact }) => {
     });
   };
   const location = useLocation();
-  const isBlogPage = location.pathname === "/blog";
+  const isBlogPage = location.pathname === "/media";
   return (
     <nav className={`${navIsOpen ? "active" : ""}`}>
       <div className="logo">
