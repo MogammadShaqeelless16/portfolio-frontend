@@ -46,6 +46,9 @@ const Navbar = ({ about, project, contact }) => {
         <li className="nav-link">
           <Link to="/media">Media</Link>
         </li>
+        <li className="nav-link">
+          <Link to="/tool">Tool</Link>
+        </li>
         {isBlogPage ? null : (
           <li className="nav-link" onClick={() => scrollToSection(contact)}>
             <Link to="#contact">Contact</Link>

@@ -16,6 +16,8 @@ import Dashboard from "./Admin/Pages/Dashboard/Dashboard";
 import store from "./Redux/store";
 import { loadUser } from "./Redux/User/userAction";
 import { useSelector } from "react-redux";
+import Tool from "./Pages/Tool/tool";
+
 function App() {
   useEffect(() => {
     store.dispatch(loadUser());
@@ -60,6 +62,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/media" element={<Blog />} />
+          </Routes>
+          <Routes>
+            <Route path="/tool" element={<Tool />} />
           </Routes>
 
           <Routes>
