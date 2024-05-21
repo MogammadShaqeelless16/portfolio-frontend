@@ -1,4 +1,5 @@
-import "./App.css";
+import React from 'react';
+import "./App.css"; // Import your global CSS file
 import Navbar from "./Components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -18,6 +19,7 @@ import { loadUser } from "./Redux/User/userAction";
 import { useSelector } from "react-redux";
 import Tool from "./Pages/Tool/tool";
 import MapPage from "./Pages/Map/Map";
+import BackgroundAnimation from "./Components/BackgroundAnimation/BackgroundAnimation"; // Import your BackgroundAnimation component
 
 function App() {
   useEffect(() => {
@@ -47,49 +49,43 @@ function App() {
         <>
           {!isAuthentication ? (
             <>
-              <Navbar about={about} project={project} contact={contact} />
+              <BackgroundAnimation /> {/* Add your BackgroundAnimation component here */}
+              <div className="content-container"> {/* Container for application content */}
+                <Navbar about={about} project={project} contact={contact} />
+                <Routes>
+                  <Route
+                    path="/"
+                    element={
+                      <Home about={about} project={project} contact={contact} />
+                    }
+                  />
+                </Routes>
+                <Routes>
+                  <Route path="/media" element={<Blog />} />
+                </Routes>
+                <Routes>
+                  <Route path="/tool" element={<Tool />} />
+                </Routes>
+                <Routes>
+                  <Route path="/map" element={<MapPage />} />
+                </Routes>
+                <Routes>
+                  <Route path="/login" element={<Login />} />
+                </Routes>
+                <Routes>
+                  <Route
+                    path="/admin/dashboard"
+                    element={isAuthentication ? <Dashboard /> : <Login />}
+                  />
+                </Routes>
+                <SocialIcons />
+                <Footer />
+                <ToastContainer />
+              </div>
             </>
           ) : (
             ""
           )}
-
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home about={about} project={project} contact={contact} />
-              }
-            />
-          </Routes>
-          <Routes>
-            <Route path="/media" element={<Blog />} />
-          </Routes>
-          <Routes>
-            <Route path="/tool" element={<Tool />} />
-          </Routes>
-          <Routes>
-            <Route path="/map" element={<MapPage />} />
-          </Routes>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-          </Routes>
-          <Routes>
-            <Route
-              path="/admin/dashboard"
-              element={isAuthentication ? <Dashboard /> : <Login />}
-            />
-          </Routes>
-
-          {!isAuthentication ? (
-            <>
-              <SocialIcons />
-              <Footer />
-            </>
-          ) : (
-            ""
-          )}
-
-          <ToastContainer />
         </>
       )}
     </>

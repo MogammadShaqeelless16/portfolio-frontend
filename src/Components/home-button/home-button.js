@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FaFileDownload } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa';
 import "../home-button/home-button.css"
 
 const HomeButton = () => {
   const [githubFollowers, setGithubFollowers] = useState(0);
-  const [tiktokFollowers, setTiktokFollowers] = useState(0); // Add TikTok followers state
+  const [tiktokFollowers, setTiktokFollowers] = useState(0);
   const linkedinUrl = 'https://www.linkedin.com/in/your-username/'; 
   const instagramUrl = 'https://www.instagram.com/shaqeelless/'; 
-  const tiktokUrl = 'https://www.tiktok.com/@mogammadless'; // Add TikTok URL
+  const tiktokUrl = 'https://www.tiktok.com/@mogammadless'; 
 
   useEffect(() => {
     fetch('https://api.github.com/users/MogammadShaqeelless16')
@@ -18,8 +15,7 @@ const HomeButton = () => {
   }, []);
 
   useEffect(() => {
-    // Add API call to fetch TikTok follower count
-    fetch('https://api.tiktok.com/user/info?username=mogammadless') // Replace with actual API endpoint
+    fetch('https://api.tiktok.com/user/info?username=mogammadless')
       .then(response => response.json())
       .then(data => setTiktokFollowers(data.followers));
   }, []);
@@ -28,27 +24,27 @@ const HomeButton = () => {
     <div className="social-buttons">
       <button className="github-button">
         <a href="/your-cv-url" download>
-          <FaFileDownload /> Download CV
+          Download CV
         </a>
       </button>
       <button className="github-button">
         <a href={`https://github.com/your-username`} target="_blank" rel="noreferrer">
-          <FaGithub /> Follow me on GitHub ({githubFollowers})
+          Follow me on GitHub ({githubFollowers})
         </a>
       </button>
       <button className="linkedin-button">
         <a href={linkedinUrl} target="_blank" rel="noreferrer">
-          <FaLinkedin /> Connect with me on LinkedIn
+          Connect with me on LinkedIn
         </a>
       </button>
       <button className="instagram-button" rel="noreferrer">
         <a href={instagramUrl} target="_blank" rel="noreferrer">
-          <FaInstagram /> Follow me on Instagram
+          Follow me on Instagram
         </a>
       </button>
       <button className="tiktok-button" rel="noreferrer">
         <a href={tiktokUrl} target="_blank" rel="noreferrer">
-          <FaTiktok /> Follow me on TikTok ({tiktokFollowers})
+          Follow me on TikTok ({tiktokFollowers})
         </a>
       </button>
     </div>
