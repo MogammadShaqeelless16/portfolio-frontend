@@ -17,6 +17,7 @@ import store from "./Redux/store";
 import { loadUser } from "./Redux/User/userAction";
 import { useSelector } from "react-redux";
 import Tool from "./Pages/Tool/tool";
+import MapPage from "./Pages/Map/Map";
 
 function App() {
   useEffect(() => {
@@ -66,7 +67,9 @@ function App() {
           <Routes>
             <Route path="/tool" element={<Tool />} />
           </Routes>
-
+          <Routes>
+            <Route path="/map" element={<MapPage />} />
+          </Routes>
           <Routes>
             <Route path="/login" element={<Login />} />
           </Routes>
