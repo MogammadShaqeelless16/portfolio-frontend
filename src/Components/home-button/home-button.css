@@ -50,13 +50,6 @@
     position: relative;
   }
   
-  .tiktok-button::before {
-    content: '\e939'; /* TikTok icon */
-    font-family: 'react-icons/fa';
-    position: absolute;
-    left: 10px;
-  }
-  
   .facebook-button {
     background-color: #3b5998; /* Add Facebook button color */
     /* Add Facebook icon */

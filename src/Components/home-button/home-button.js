@@ -8,7 +8,7 @@ const HomeButton = () => {
   const [githubFollowers, setGithubFollowers] = useState(0);
   const [tiktokFollowers, setTiktokFollowers] = useState(0); // Add TikTok followers state
   const linkedinUrl = 'https://www.linkedin.com/in/your-username/'; 
-  const instagramUrl = 'https://www.instagram.com/your-username/'; 
+  const instagramUrl = 'https://www.instagram.com/shaqeelless/'; 
   const tiktokUrl = 'https://www.tiktok.com/@mogammadless'; // Add TikTok URL
 
   useEffect(() => {
