@@ -26,7 +26,9 @@ const HomeHero = () => {
             />
           </span>
         </h2>
-        <HomeButton />
+        <br></br>
+          <HomeButton />
+        <br></br>
         <div className="home-hero__info">
           {about && about[0] && (
             <p className="text-primary" data-aos="fade-up">
