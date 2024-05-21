@@ -3,6 +3,7 @@ import "./HomeHero.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllAbout } from "../../Redux/About/aboutAction";
 import { Typewriter } from "react-simple-typewriter";
+import HomeButton from "../home-button/home-button";
 const HomeHero = () => {
   const dispatch = useDispatch();
   const { about } = useSelector((state) => state.about);
@@ -25,6 +26,7 @@ const HomeHero = () => {
             />
           </span>
         </h2>
+        <HomeButton />
         <div className="home-hero__info">
           {about && about[0] && (
             <p className="text-primary" data-aos="fade-up">
