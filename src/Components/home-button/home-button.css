@@ -1,97 +1,71 @@
 .social-buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  /* Add responsive styling */
-  margin: 20px 0;
-  flex-direction: column;
-  align-items: center;
-}
-
-.social-buttons a {
-  color: white;
-  text-decoration: none;
-}
-
-.social-buttons a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: white; /* Change text color to white */
-  background-color: #333; /* Change background color to a dark gray */
-  transition: opacity 0.3s; /* Add transition effect */
-  /* Add responsive styling */
-  width: 100%;
-  max-width: 200px;
-  margin: 10px 0;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.github-button {
-  background-color: #333;
-}
-
-.linkedin-button {
-  background-color: #0077b5;
-}
-
-.instagram-button {
-  background-color: #e1306c;
-}
-
-.tiktok-button {
-  background-color: #000000; /* Add TikTok button color */
-  /* Add TikTok icon */
-  position: relative;
-}
-
-.facebook-button {
-  background-color: #3b5998; /* Add Facebook button color */
-  /* Add Facebook icon */
-  position: relative;
-}
-
-.facebook-button::before {
-  content: '\f09a'; /* Facebook icon */
-  font-family: 'react-icons/fa';
-  position: absolute;
-  left: 10px;
-}
-
-.twitter-button {
-  background-color: #1da1f2; /* Add Twitter button color */
-  /* Add Twitter icon */
-  position: relative;
-}
-
-.twitter-button::before {
-  content: '\f099'; /* Twitter icon */
-  font-family: 'react-icons/fa';
-  position: absolute;
-  left: 10px;
-}
-
-/* Add media query for responsive styling */
-@media only screen and (max-width: 768px) {
-  .social-buttons {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
+  
+  .social-buttons a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .social-buttons a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
   button {
-    width: 100%;
-    max-width: 150px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: white; /* Change text color to white */
+    background-color: #333; /* Change background color to a dark gray */
+    transition: opacity 0.3s; /* Add transition effect */
   }
-}
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .github-button {
+    background-color: #333;
+  }
+  
+  .linkedin-button {
+    background-color: #0077b5;
+  }
+  
+  .instagram-button {
+    background-color: #e1306c;
+  }
+  
+  .tiktok-button {
+    background-color: #000000; /* Add TikTok button color */
+    /* Add TikTok icon */
+    position: relative;
+  }
+  
+  .facebook-button {
+    background-color: #3b5998; /* Add Facebook button color */
+    /* Add Facebook icon */
+    position: relative;
+  }
+  
+  .facebook-button::before {
+    content: '\f09a'; /* Facebook icon */
+    font-family: 'react-icons/fa';
+    position: absolute;
+    left: 10px;
+  }
+  
+  .twitter-button {
+    background-color: #1da1f2; /* Add Twitter button color */
+    /* Add Twitter icon */
+    position: relative;
+  }
+  
