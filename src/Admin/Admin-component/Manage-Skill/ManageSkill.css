@@ -36,7 +36,7 @@ table {
 
 th {
     background-color: var(--dark-navy);
-    color: var(--slate);
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-size: 1.9rem;

@@ -52,7 +52,7 @@ form {
 }
 
 .required-star {
-    color: var(--slate);
+    color: #fff;
 }
 
 input,
