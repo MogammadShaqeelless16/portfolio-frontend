@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross1 } from "react-icons/rx";
-import logo from "../../assets/logo.gif";
+import logo from "../../assets/logo.png";
 const Navbar = ({ about, project, contact }) => {
   const [navIsOpen, setNavIsOpen] = useState(false);
   const toggleNav = () => {
