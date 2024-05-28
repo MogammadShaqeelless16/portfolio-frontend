@@ -4,7 +4,7 @@ import "../home-button/home-button.css"
 const HomeButton = () => {
   const [githubFollowers, setGithubFollowers] = useState(0);
   const [tiktokFollowers, setTiktokFollowers] = useState(0);
-  const linkedinUrl = 'https://www.linkedin.com/in/your-username/'; 
+  const linkedinUrl = 'https://www.linkedin.com/in/shaqeel-less-11979a186/'; 
   const instagramUrl = 'https://www.instagram.com/shaqeelless/'; 
   const tiktokUrl = 'https://www.tiktok.com/@mogammadless'; 
 
@@ -23,12 +23,12 @@ const HomeButton = () => {
   return (
     <div className="social-buttons">
       <button className="github-button">
-        <a href="/your-cv-url" download>
+        <a href="https://drive.google.com/file/d/11QweEAvgI4Vj7BRKmJkyQQ3wfKbeg1di/view?usp=sharing" download>
           Download CV
         </a>
       </button>
       <button className="github-button">
-        <a href={`https://github.com/your-username`} target="_blank" rel="noreferrer">
+        <a href={`https://github.com/MogammadShaqeelless16`} target="_blank" rel="noreferrer">
           Follow me on GitHub ({githubFollowers})
         </a>
       </button>
