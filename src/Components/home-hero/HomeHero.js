@@ -17,7 +17,7 @@ const HomeHero = () => {
         Hey there! I'm Shaqeel Less, and I'm passionate about <br />
           <span>
             <Typewriter
-              words={["Ethical Hacker", "Web Dev", "Software Dev", "Innovation"]}
+              words={["Ethical Hacking", "Web Dev", "Software Dev", "Innovation"]}
               loop
               typeSpeed={150}
               deleteSpeed={100}
