@@ -23,7 +23,7 @@ const HomeButton = () => {
   return (
     <div className="social-buttons">
       <button className="github-button">
-        <a href="https://drive.google.com/file/d/11QweEAvgI4Vj7BRKmJkyQQ3wfKbeg1di/view?usp=sharing" download>
+        <a href="https://cvconstruct.netlify.app/" download>
           Download CV
         </a>
       </button>
